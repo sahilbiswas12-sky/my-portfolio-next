@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollProgress from "./components/ScrollProgress";
+import BackToTop from "./components/BackToTop";
+
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -77,16 +84,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html
+      lang="en"
+      className={cn("font-sans", geist.variable)}
+    >
       <body className="bg-[#050505] text-white antialiased">
+
+        <ScrollProgress />
 
         <Navbar />
 
-        <main>
+        <main id="main-content">
           {children}
         </main>
 
         <Footer />
+
+        <BackToTop />
 
       </body>
     </html>

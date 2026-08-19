@@ -1,189 +1,164 @@
 import Link from "next/link";
 
+const navigation = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Work",
+    href: "/work",
+  },
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+];
+
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-cyan-400/10 bg-[#050505] text-white">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[#050505] text-white">
 
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
+      {/* BACKGROUND */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -bottom-50 left-[20%] h-100 w-100 rounded-full bg-cyan-500/10 blur-[140px]" />
 
-        {/* =========================
-            MAIN FOOTER
-        ========================== */}
-
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-
-          {/* =========================
-              BRAND
-          ========================== */}
-
-          <div className="lg:col-span-2">
-
-            <Link
-              href="/"
-              className="group inline-flex items-center gap-3"
-            >
-
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-cyan-400 via-blue-500 to-purple-500 text-sm font-bold text-black shadow-lg shadow-cyan-500/20 transition duration-300 group-hover:scale-110 group-hover:rotate-6">
-                S
-              </span>
-
-              <span className="text-lg font-semibold tracking-tight transition group-hover:text-cyan-300">
-                Sahil Biswas
-              </span>
-
-            </Link>
-
-
-            <p className="mt-6 max-w-md text-sm leading-7 text-white/45">
-              Web Developer, AI Engineer &amp; Business Professional
-              building modern digital experiences, intelligent
-              applications, and practical technology solutions.
-            </p>
-
-
-            {/* EMAIL */}
-
-            <a
-              href="mailto:sahilbiswas890@gmail.com"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 transition duration-300 hover:text-cyan-200"
-            >
-              sahilbiswas890@gmail.com
-              <span className="transition-transform duration-300 hover:translate-x-1">
-                ↗
-              </span>
-            </a>
-
-          </div>
-
-
-          {/* =========================
-              NAVIGATION
-          ========================== */}
-
-          <div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
-              Navigation
-            </p>
-
-
-            <nav className="mt-6 flex flex-col gap-4">
-
-              <Link
-                href="/"
-                className="w-fit text-sm text-white/50 transition duration-300 hover:translate-x-1 hover:text-cyan-300"
-              >
-                Home
-              </Link>
-
-              <Link
-                href="/work"
-                className="w-fit text-sm text-white/50 transition duration-300 hover:translate-x-1 hover:text-cyan-300"
-              >
-                Work
-              </Link>
-
-              <Link
-                href="/about"
-                className="w-fit text-sm text-white/50 transition duration-300 hover:translate-x-1 hover:text-cyan-300"
-              >
-                About
-              </Link>
-
-              <Link
-                href="/contact"
-                className="w-fit text-sm text-white/50 transition duration-300 hover:translate-x-1 hover:text-cyan-300"
-              >
-                Contact
-              </Link>
-
-            </nav>
-
-          </div>
-
-
-          {/* =========================
-              SOCIAL
-          ========================== */}
-
-          <div>
-
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-purple-400">
-              Connect
-            </p>
-
-
-            <div className="mt-6 flex flex-col gap-4">
-
-              <a
-                href="https://www.linkedin.com/in/sahil-biswas-827337287/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-sm text-blue-300/70 transition duration-300 hover:translate-x-1 hover:text-blue-300"
-              >
-                LinkedIn ↗
-              </a>
-
-
-              <a
-                href="https://github.com/sahilbiswas12-sky"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-sm text-purple-300/70 transition duration-300 hover:translate-x-1 hover:text-purple-300"
-              >
-                GitHub ↗
-              </a>
-
-
-              <a
-                href="https://www.instagram.com/sahil_biswas_14/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit text-sm text-pink-300/70 transition duration-300 hover:translate-x-1 hover:text-pink-300"
-              >
-                Instagram ↗
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        {/* =========================
-            BOTTOM BAR
-        ========================== */}
-
-        <div className="mt-16 flex flex-col justify-between gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Sahil Biswas. All rights reserved.
-          </p>
-
-
-          <p className="text-xs text-white/20">
-            Designed &amp; built with{" "}
-            <span className="text-cyan-400/60">
-              Next.js
-            </span>
-            {" "}and{" "}
-            <span className="text-purple-400/60">
-              Tailwind CSS
-            </span>
-          </p>
-
-        </div>
-
-
-        {/* =========================
-            FOOTER ACCENT
-        ========================== */}
-
-        <div className="mt-10 h-px w-full bg-linear-to-r from-transparent via-cyan-400/30 to-transparent" />
-
+        <div className="absolute right-[10%] top-0 h-87.5 w-87.5 rounded-full bg-purple-500/10 blur-[130px]" />
       </div>
 
+      <div className="relative mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
+
+        {/* TOP */}
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_0.6fr]">
+
+          <div>
+            <div className="flex items-center gap-3">
+
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-linear-to-br from-cyan-400 via-blue-500 to-purple-500 text-sm font-bold text-black">
+                S
+              </div>
+
+              <div>
+                <p className="font-semibold">
+                  Sahil Biswas
+                </p>
+
+                <p className="mt-1 text-xs text-white/30">
+                  Web Developer · AI Engineer
+                </p>
+              </div>
+            </div>
+
+            <h2 className="mt-10 max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+              Building ideas into
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+                {" "}
+                working products.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-xl leading-8 text-white/40">
+              I build practical web applications, modern interfaces,
+              AI-assisted experiences, and technology-driven products.
+            </p>
+
+            <Link
+              href="/contact"
+              className="group mt-8 inline-flex items-center gap-3 rounded-full bg-linear-to-r from-cyan-400 to-blue-500 px-6 py-3.5 text-sm font-semibold text-black transition hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20"
+            >
+              Let&apos;s build something
+
+              <span className="transition group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+          </div>
+
+          {/* NAV */}
+          <div className="grid grid-cols-2 gap-8">
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/30">
+                Navigation
+              </p>
+
+              <div className="mt-6 space-y-4">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block text-sm text-white/45 transition hover:translate-x-1 hover:text-cyan-300"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/30">
+                Connect
+              </p>
+
+              <div className="mt-6 space-y-4">
+
+                <a
+                  href="https://github.com/sahilbiswas12-sky"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-sm text-white/45 transition hover:translate-x-1 hover:text-cyan-300"
+                >
+                  GitHub ↗
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-sm text-white/45 transition hover:translate-x-1 hover:text-cyan-300"
+                >
+                  LinkedIn ↗
+                </a>
+
+                <Link
+                  href="/contact"
+                  className="block text-sm text-white/45 transition hover:translate-x-1 hover:text-cyan-300"
+                >
+                  Contact
+                </Link>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* STATUS */}
+        <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+
+          <div className="flex items-center gap-3">
+
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-40" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+            </span>
+
+            <span className="text-xs uppercase tracking-[0.18em] text-white/35">
+              Available for opportunities
+            </span>
+          </div>
+
+          <p className="text-xs text-white/25">
+            © {currentYear} Sahil Biswas. Built with Next.js.
+          </p>
+
+        </div>
+      </div>
     </footer>
   );
 }
