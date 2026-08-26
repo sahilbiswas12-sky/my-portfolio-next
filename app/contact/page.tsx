@@ -1,4 +1,58 @@
+"use client";
+
+import { useState } from "react";
+import type { FormEvent } from "react";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<
+    { type: "idle" | "sending" | "success" | "error"; message: string }
+  >({ type: "idle", message: "" });
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus({ type: "sending", message: "Sending your message…" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          project: formData.get("project"),
+          message: formData.get("message"),
+          website: formData.get("website"),
+        }),
+      });
+
+      const result = (await response.json()) as {
+        success?: boolean;
+        message?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to send your message.");
+      }
+
+      form.reset();
+      setStatus({
+        type: "success",
+        message: "Thank you! Your message has been sent successfully.",
+      });
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Unable to send your message right now.",
+      });
+    }
+  }
+
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -114,10 +168,20 @@ export default function ContactPage() {
 
           <div className="rounded-4xl border border-cyan-400/10 bg-linear-to-br from-cyan-400/5 via-blue-400/3 to-purple-500/5 p-6 shadow-2xl shadow-cyan-500/3 sm:p-8">
             <form
-              action="/api/contact"
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-6"
             >
+
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
 
               {/* NAME */}
 
@@ -226,14 +290,28 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="group flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 px-6 py-4 text-sm font-bold text-black shadow-lg shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20"
+                disabled={status.type === "sending"}
+                className="group flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 px-6 py-4 text-sm font-bold text-black shadow-lg shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send message
+                {status.type === "sending" ? "Sending…" : "Send message"}
 
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </button>
+
+              {status.type !== "idle" && status.type !== "sending" && (
+                <p
+                  role="status"
+                  className={`rounded-xl border px-4 py-3 text-sm ${
+                    status.type === "success"
+                      ? "border-emerald-400/20 bg-emerald-400/10 text-emerald-300"
+                      : "border-red-400/20 bg-red-400/10 text-red-300"
+                  }`}
+                >
+                  {status.message}
+                </p>
+              )}
 
             </form>
           </div>

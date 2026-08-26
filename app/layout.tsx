@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import { Geist } from "next/font/google";
+
 import "./globals.css";
+import "./profile-chatbot.css";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import BackToTop from "./components/BackToTop";
+import PortfolioChatbot from "./components/PortfolioChatbot";
 
-import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({
@@ -46,7 +49,10 @@ export const metadata: Metadata = {
 
   creator: "Sahil Biswas",
 
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      "http://localhost:3000",
+  ),
 
   openGraph: {
     title:
@@ -56,9 +62,7 @@ export const metadata: Metadata = {
       "Portfolio of Sahil Biswas — Web Developer, AI Engineer & Business Professional creating modern digital experiences and practical technology solutions.",
 
     type: "website",
-
     locale: "en_IN",
-
     siteName: "Sahil Biswas Portfolio",
   },
 
@@ -86,22 +90,24 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("font-sans", geist.variable)}
+      data-scroll-behavior="smooth"
+      className={cn(
+        "font-sans",
+        geist.variable,
+      )}
     >
       <body className="bg-[#050505] text-white antialiased">
-
         <ScrollProgress />
 
         <Navbar />
 
-        <main id="main-content">
-          {children}
-        </main>
+        {children}
 
         <Footer />
 
         <BackToTop />
 
+        <PortfolioChatbot />
       </body>
     </html>
   );
