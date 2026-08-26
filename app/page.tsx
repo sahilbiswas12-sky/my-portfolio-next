@@ -1,4 +1,5 @@
 import Link from "next/link";
+import OfferLettersSection from "./components/OfferLettersSection";
 
 const projects = [
   {
@@ -170,6 +171,30 @@ export default function HomePage() {
                   ↗
                 </span>
               </Link>
+
+              <a
+                href="/Sahil-Biswas-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full border border-cyan-400/30 bg-cyan-400/5 px-7 py-4 text-sm font-semibold text-cyan-300 transition duration-300 hover:-translate-y-1 hover:bg-cyan-400/10"
+              >
+                View Resume
+                <span className="transition group-hover:translate-y-0.5">
+                  ↓
+                </span>
+              </a>
+
+              <a
+                href="https://calendly.com/sahilbiswas890/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full border border-purple-400/30 bg-purple-400/5 px-7 py-4 text-sm font-semibold text-purple-300 transition duration-300 hover:-translate-y-1 hover:bg-purple-400/10"
+              >
+                Book a Call
+                <span className="transition group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
             </div>
           </div>
         </section>
@@ -548,6 +573,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <OfferLettersSection />
 
         {/* =====================================================
             FINAL CTA
