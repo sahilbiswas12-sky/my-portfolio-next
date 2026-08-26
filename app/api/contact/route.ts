@@ -1,169 +1,103 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+type ContactPayload = {
+  name?: unknown;
+  email?: unknown;
+  project?: unknown;
+  message?: unknown;
+  website?: unknown;
+};
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function clean(value: unknown, maximumLength: number) {
+  return typeof value === "string" ? value.trim().slice(0, maximumLength) : "";
+}
 
 export async function POST(request: Request) {
   try {
-    const contentType = request.headers.get("content-type") || "";
+    const apiKey = process.env.RESEND_API_KEY;
+    const contactEmail = process.env.CONTACT_EMAIL;
+    const fromEmail =
+      process.env.CONTACT_FROM_EMAIL || "Portfolio <onboarding@resend.dev>";
 
-    let body: {
-      name?: string;
-      email?: string;
-      project?: string;
-      message?: string;
-    };
-
-    // =========================
-    // READ REQUEST BODY
-    // =========================
-
-    if (contentType.includes("application/json")) {
-      body = await request.json();
-    } else {
-      const formData = await request.formData();
-
-      body = {
-        name: formData.get("name")?.toString(),
-        email: formData.get("email")?.toString(),
-        project: formData.get("project")?.toString(),
-        message: formData.get("message")?.toString(),
-      };
-    }
-
-    const {
-      name,
-      email,
-      project,
-      message,
-    } = body;
-
-    // =========================
-    // VALIDATION
-    // =========================
-
-    if (!name || !email || !project || !message) {
+    if (!apiKey || !contactEmail) {
+      console.error("Missing RESEND_API_KEY or CONTACT_EMAIL.");
       return NextResponse.json(
         {
           success: false,
-          message: "Please fill in all required fields.",
+          message: "The contact form is not configured yet. Please email me directly.",
         },
-        { status: 400 }
+        { status: 503 },
       );
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const body = (await request.json()) as ContactPayload;
+    const name = clean(body.name, 100);
+    const email = clean(body.email, 200).toLowerCase();
+    const project = clean(body.project, 100);
+    const message = clean(body.message, 5000);
+    const website = clean(body.website, 200);
 
-    if (!emailRegex.test(email)) {
+    // Honeypot: return success without sending anything to discourage bots.
+    if (website) {
+      return NextResponse.json({ success: true, message: "Message received." });
+    }
+
+    if (!name || !email || !project || message.length < 2) {
       return NextResponse.json(
-        {
-          success: false,
-          message: "Please enter a valid email address.",
-        },
-        { status: 400 }
+        { success: false, message: "Please complete every required field." },
+        { status: 400 },
       );
     }
 
-    // =========================
-    // SEND EMAIL
-    // =========================
+    if (!emailPattern.test(email)) {
+      return NextResponse.json(
+        { success: false, message: "Please enter a valid email address." },
+        { status: 400 },
+      );
+    }
 
-    const { data, error } = await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>",
-
-      // Resend testing mode allows sending to
-      // the verified/testing recipient.
-      to: ["sahilbiswas151@gmail.com"],
-
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: fromEmail,
+      to: [contactEmail],
       replyTo: email,
-
-      subject: `New Portfolio Enquiry — ${project}`,
-
-      html: `
-        <div
-          style="
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #111;
-            max-width: 700px;
-            margin: 0 auto;
-          "
-        >
-
-          <h2 style="margin-bottom: 24px;">
-            New Portfolio Enquiry
-          </h2>
-
-          <div style="margin-bottom: 16px;">
-            <strong>Name:</strong>
-            <p>${name}</p>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <strong>Email:</strong>
-            <p>${email}</p>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <strong>Project Type:</strong>
-            <p>${project}</p>
-          </div>
-
-          <div style="margin-bottom: 16px;">
-            <strong>Message:</strong>
-            <p style="white-space: pre-wrap;">
-              ${message}
-            </p>
-          </div>
-
-          <hr style="margin: 30px 0;" />
-
-          <p style="font-size: 13px; color: #666;">
-            Sent from the Sahil Biswas portfolio contact form.
-          </p>
-
-        </div>
-      `,
+      subject: `Portfolio enquiry from ${name}`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Project type: ${project}`,
+        "",
+        "Message:",
+        message,
+      ].join("\n"),
     });
 
-    // =========================
-    // RESEND ERROR
-    // =========================
-
     if (error) {
-      console.error("Resend API Error:", error);
-
+      console.error("Resend API error:", error);
       return NextResponse.json(
         {
           success: false,
-          message: "Unable to send your message right now.",
+          message: "Unable to send your message right now. Please email me directly.",
         },
-        { status: 500 }
+        { status: 502 },
       );
     }
 
-    // =========================
-    // SUCCESS
-    // =========================
-
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Your message has been sent successfully!",
-        id: data?.id,
-      },
-      { status: 200 }
-    );
-
+    return NextResponse.json({
+      success: true,
+      message: "Your message has been sent successfully.",
+    });
   } catch (error) {
-    console.error("Contact API Error:", error);
-
+    console.error("Contact route error:", error);
     return NextResponse.json(
       {
         success: false,
-        message: "Something went wrong. Please try again or email me directly.",
+        message: "Unable to send your message right now. Please email me directly.",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
