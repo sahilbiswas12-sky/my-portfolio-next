@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import OfferLettersSection from "./components/OfferLettersSection";
 
@@ -121,7 +122,8 @@ export default function HomePage() {
 
         <section className="mx-auto max-w-7xl px-6 pb-24 pt-28 sm:px-8 sm:pb-32 sm:pt-36 lg:px-12 lg:pb-36 lg:pt-40">
 
-          <div className="max-w-6xl">
+          <div className="grid items-center gap-16 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_410px]">
+            <div className="max-w-4xl">
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-3 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
@@ -138,7 +140,7 @@ export default function HomePage() {
               Web Developer · AI Engineer · Business Professional
             </p>
 
-            <h1 className="mt-8 max-w-6xl text-5xl font-bold leading-[0.92] tracking-tighter sm:text-7xl lg:text-[7.5rem]">
+            <h1 className="mt-8 text-5xl font-bold leading-[0.92] tracking-tighter sm:text-7xl lg:text-[6rem] xl:text-[7rem]">
               I build digital
               <span className="block bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 experiences & systems.
@@ -195,6 +197,31 @@ export default function HomePage() {
                   ↗
                 </span>
               </a>
+            </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-sm lg:mx-0 lg:justify-self-end">
+              <div className="profile-orbit" aria-hidden="true" />
+              <div className="profile-glow" aria-hidden="true" />
+
+              <div className="profile-frame relative aspect-4/5 overflow-hidden rounded-[2.2rem] border border-white/15 bg-[#0a0a0a] p-2 shadow-2xl shadow-cyan-500/10">
+                <div className="relative h-full w-full overflow-hidden rounded-[1.75rem]">
+                  <Image
+                    src="/sahil-biswas.jpeg"
+                    alt="Portrait of Sahil Biswas"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 384px, 410px"
+                    className="object-cover object-top transition duration-700 hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#050505]/45 via-transparent to-cyan-400/5" />
+                </div>
+              </div>
+
+              <div className="absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-emerald-400/20 bg-[#080808]/90 px-4 py-2 text-xs font-medium text-emerald-300 shadow-xl backdrop-blur-xl">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+                Open to opportunities
+              </div>
             </div>
           </div>
         </section>

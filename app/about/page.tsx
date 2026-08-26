@@ -20,7 +20,7 @@ export default function AboutPage() {
               I build digital
               <br />
 
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 experiences & systems.
               </span>
 
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
 
               A professional who thinks
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 {" "}beyond the code.
               </span>
 
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
 
               Where I&apos;ve
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 {" "}worked.
               </span>
 
@@ -260,7 +260,7 @@ export default function AboutPage() {
             <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
 
               Tools I use to turn ideas
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 {" "}into products.
               </span>
 
@@ -322,7 +322,7 @@ export default function AboutPage() {
             Education
           </p>
 
-          <div className="mt-12 overflow-hidden rounded-[2rem] border border-blue-400/10 bg-gradient-to-br from-cyan-400/[0.06] via-blue-400/[0.03] to-purple-400/[0.06] p-8 shadow-xl shadow-blue-500/5 sm:p-10">
+          <div className="mt-12 overflow-hidden rounded-[2rem] border border-blue-400/10 bg-linear-to-br from-cyan-400/6 via-blue-400/3 to-purple-400/6 p-8 shadow-xl shadow-blue-500/5 sm:p-10">
 
             <div className="flex flex-col justify-between gap-8 md:flex-row">
 
@@ -371,7 +371,7 @@ export default function AboutPage() {
           <h2 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl">
 
             Continuous
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
               {" "}learning.
             </span>
 
@@ -429,7 +429,7 @@ export default function AboutPage() {
               Have an idea
               <br />
 
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 worth building?
               </span>
 
@@ -438,7 +438,7 @@ export default function AboutPage() {
 
             <a
               href="/contact"
-              className="group flex w-fit shrink-0 items-center gap-3 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 px-7 py-4 text-sm font-semibold text-black shadow-xl shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/25"
+              className="group flex w-fit shrink-0 items-center gap-3 rounded-full bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 px-7 py-4 text-sm font-semibold text-black shadow-xl shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/25"
             >
 
               <span>
@@ -523,7 +523,7 @@ function ExperienceCard({
 
   return (
     <article
-      className={`group rounded-[2rem] border bg-white/[0.025] p-6 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/[0.045] ${style.border} ${style.glow} sm:p-8`}
+      className={`group rounded-[2rem] border bg-white/2.5 p-6 shadow-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/4.5 ${style.border} ${style.glow} sm:p-8`}
     >
 
       <div className="flex flex-col gap-6 md:flex-row md:items-start">
@@ -664,19 +664,19 @@ function SkillCard({
 
   return (
     <article
-      className={`group relative overflow-hidden rounded-[2rem] border bg-white/[0.025] p-7 shadow-xl transition-all duration-500 hover:-translate-y-1 ${style.border} ${style.background} ${style.glow}`}
+      className={`group relative overflow-hidden rounded-[2rem] border bg-white/2.5 p-7 shadow-xl transition-all duration-500 hover:-translate-y-1 ${style.border} ${style.background} ${style.glow}`}
     >
 
       {/* TOP GRADIENT LINE */}
 
       <div
-        className={`absolute left-0 top-0 h-px w-0 bg-gradient-to-r ${style.line} transition-all duration-500 group-hover:w-full`}
+        className={`absolute left-0 top-0 h-px w-0 bg-linear-to-r ${style.line} transition-all duration-500 group-hover:w-full`}
       />
 
 
       {/* ICON */}
 
-      <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] text-sm text-white/50 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/[0.08]">
+      <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/4 text-sm text-white/50 transition-all duration-300 group-hover:border-white/20 group-hover:bg-white/8">
         ◆
       </div>
 

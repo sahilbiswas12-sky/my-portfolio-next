@@ -173,7 +173,7 @@ export default function ProjectCaseStudy({
 
         <div className="absolute bottom-20 right-[5%] h-96 w-96 rounded-full bg-purple-500/10 blur-[140px]" />
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:48px_48px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-size-[48px_48px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
@@ -230,7 +230,7 @@ export default function ProjectCaseStudy({
 
         <section className="py-20 sm:py-28">
           <div
-            className={`group relative flex min-h-[430px] items-center justify-center overflow-hidden rounded-[2.5rem] border ${theme.border} bg-linear-to-br ${theme.visual} transition duration-700 hover:border-white/20`}
+            className={`group relative flex min-h-107.5 items-center justify-center overflow-hidden rounded-[2.5rem] border ${theme.border} bg-linear-to-br ${theme.visual} transition duration-700 hover:border-white/20`}
           >
             <div
               className={`absolute h-80 w-80 rounded-full ${theme.glow} blur-[120px] transition duration-700 group-hover:scale-125`}
@@ -254,7 +254,7 @@ export default function ProjectCaseStudy({
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className={`group rounded-2xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 ${theme.borderHover} hover:-translate-y-1`}
+              className={`group rounded-2xl border border-white/10 bg-white/2.5 p-6 transition duration-300 ${theme.borderHover} hover:-translate-y-1`}
             >
               <p
                 className={`text-3xl font-semibold ${theme.text}`}
@@ -298,7 +298,7 @@ export default function ProjectCaseStudy({
 
         <section className="grid gap-6 border-t border-white/10 py-20 sm:py-28 lg:grid-cols-2">
 
-          <div className="group rounded-[2rem] border border-red-400/10 bg-red-400/[0.025] p-8 transition duration-500 hover:-translate-y-1 hover:border-red-400/25 sm:p-10">
+          <div className="group rounded-[2rem] border border-red-400/10 bg-red-400/2.5 p-8 transition duration-500 hover:-translate-y-1 hover:border-red-400/25 sm:p-10">
 
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-red-400/20 bg-red-400/10 text-xl text-red-300">
               !
@@ -482,7 +482,7 @@ export default function ProjectCaseStudy({
                     href={githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className={`rounded-full border ${theme.border} px-6 py-3.5 text-sm text-white/60 transition hover:bg-white/[0.04] ${theme.borderHover}`}
+                    className={`rounded-full border ${theme.border} px-6 py-3.5 text-sm text-white/60 transition hover:bg-white/4 ${theme.borderHover}`}
                   >
                     View GitHub ↗
                   </a>
@@ -604,7 +604,7 @@ function KeyboardVisual() {
           {keys.map((_, index) => (
             <div
               key={index}
-              className="aspect-square rounded-md border border-purple-300/20 bg-purple-300/[0.04] transition duration-300 hover:scale-110 hover:bg-purple-400/20"
+              className="aspect-square rounded-md border border-purple-300/20 bg-purple-300/4 transition duration-300 hover:scale-110 hover:bg-purple-400/20"
             />
           ))}
         </div>
@@ -654,7 +654,7 @@ function PortfolioVisual() {
         <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/60" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-400/60" />
 
-        <div className="ml-4 h-5 flex-1 rounded-full bg-white/[0.04]" />
+        <div className="ml-4 h-5 flex-1 rounded-full bg-white/4" />
       </div>
 
       <div className="grid min-h-64 grid-cols-[0.35fr_1fr]">
@@ -677,8 +677,8 @@ function PortfolioVisual() {
           <div className="mt-2 h-3 w-4/5 rounded bg-white/10" />
 
           <div className="mt-8 grid grid-cols-2 gap-3">
-            <div className="h-20 rounded-xl border border-blue-400/10 bg-blue-400/[0.05]" />
-            <div className="h-20 rounded-xl border border-purple-400/10 bg-purple-400/[0.05]" />
+            <div className="h-20 rounded-xl border border-blue-400/10 bg-blue-400/5" />
+            <div className="h-20 rounded-xl border border-purple-400/10 bg-purple-400/5" />
           </div>
         </div>
       </div>
@@ -718,7 +718,7 @@ function FeatureCard({
 }) {
   return (
     <div
-      className={`group rounded-3xl border border-white/10 bg-white/[0.02] p-7 transition-all duration-500 ${theme.borderHover} hover:-translate-y-2`}
+      className={`group rounded-3xl border border-white/10 bg-white/2 p-7 transition-all duration-500 ${theme.borderHover} hover:-translate-y-2`}
     >
       <div
         className={`flex h-12 w-12 items-center justify-center rounded-2xl border ${theme.border} ${theme.bg} text-lg ${theme.text} transition duration-500 group-hover:rotate-6 group-hover:scale-110`}
@@ -746,7 +746,7 @@ function ProcessCard({
   theme: (typeof styles)[Accent];
 }) {
   return (
-    <div className="group flex gap-5 rounded-2xl p-4 transition hover:bg-white/[0.025]">
+    <div className="group flex gap-5 rounded-2xl p-4 transition hover:bg-white/2.5">
 
       <span
         className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border ${theme.border} ${theme.bg} text-xs font-semibold ${theme.text} transition group-hover:scale-110`}
