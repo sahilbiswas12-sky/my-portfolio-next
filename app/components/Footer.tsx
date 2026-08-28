@@ -1,22 +1,15 @@
 import Link from "next/link";
 
 const navigation = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Work",
-    href: "/work",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
+  { name: "Home", href: "/" },
+  { name: "Work", href: "/work" },
+  { name: "Internships", href: "/internships" },
+  { name: "Skills", href: "/skills" },
+  { name: "Certificates", href: "/certificates" },
+  { name: "Resume", href: "/resume" },
+  { name: "Blog", href: "/blog" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Footer() {
@@ -35,7 +28,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
 
         {/* TOP */}
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_0.6fr]">
+        <div className="grid items-start gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
 
           <div>
             <div className="flex items-center gap-3">
@@ -81,14 +74,14 @@ export default function Footer() {
           </div>
 
           {/* NAV */}
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-[1.5fr_1fr] sm:gap-12">
 
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/30">
                 Navigation
               </p>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-6 grid grid-cols-2 gap-x-8 gap-y-4">
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
