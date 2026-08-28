@@ -1,21 +1,21 @@
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
+    <main id="main-content" className="min-h-screen bg-[#050505] pt-18 text-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
 
         {/* =========================
             HERO
         ========================== */}
 
-        <section className="border-b border-cyan-400/10 pb-20 pt-16 sm:pb-28 sm:pt-20">
+        <section className="border-b border-cyan-400/10 py-16 sm:py-20 lg:py-24">
 
-          <div className="max-w-5xl">
+          <div className="max-w-6xl">
 
             <p className="inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 shadow-lg shadow-cyan-500/10">
               About Me
             </p>
 
-            <h1 className="mt-8 text-5xl font-bold leading-[0.95] tracking-[-0.045em] sm:text-6xl lg:text-8xl">
+            <h1 className="mt-7 max-w-6xl text-5xl font-bold leading-[1.02] tracking-[-0.045em] sm:mt-8 sm:text-6xl lg:text-7xl xl:text-8xl">
 
               I build digital
               <br />
@@ -26,7 +26,7 @@ export default function AboutPage() {
 
             </h1>
 
-            <p className="mt-10 max-w-3xl text-base leading-8 text-white/50 sm:text-lg">
+            <p className="mt-8 max-w-3xl text-base leading-7 text-white/55 sm:mt-10 sm:text-lg sm:leading-8">
               I&apos;m Sahil Biswas, a Full-Stack Web Developer,
               AI Engineer, and Business Professional focused on
               building modern, responsive, and user-centered
@@ -42,15 +42,15 @@ export default function AboutPage() {
             PROFESSIONAL SUMMARY
         ========================== */}
 
-        <section className="grid gap-12 border-b border-cyan-400/10 py-20 sm:py-28 lg:grid-cols-2">
+        <section className="grid items-start gap-12 border-b border-cyan-400/10 py-16 sm:py-20 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20 lg:py-24">
 
-          <div>
+          <div className="max-w-xl">
 
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-400">
               Profile
             </p>
 
-            <h2 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            <h2 className="mt-5 text-3xl font-bold leading-tight tracking-tight sm:mt-6 sm:text-4xl lg:text-5xl">
 
               A professional who thinks
               <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
@@ -62,7 +62,7 @@ export default function AboutPage() {
           </div>
 
 
-          <div className="space-y-6 text-base leading-8 text-white/50">
+          <div className="max-w-2xl space-y-5 text-base leading-7 text-white/55 sm:space-y-6 sm:leading-8 lg:justify-self-end">
 
             <p>
               I am a Full-Stack Web Developer and Computer Science &
