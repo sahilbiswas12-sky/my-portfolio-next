@@ -212,7 +212,7 @@ export default function PortfolioChatbot() {
                 maxLength={600}
                 disabled={loading}
                 placeholder="Message Sahil’s AI assistant…"
-                className="max-h-28 min-h-10 flex-1 resize-none bg-transparent px-2 py-2 text-sm text-white outline-none placeholder:text-white/30 disabled:opacity-50"
+                className="max-h-28 min-h-10 flex-1 resize-none bg-transparent px-2 py-2 text-sm text-white outline-none placeholder:text-white/60 disabled:opacity-50"
               />
               <button
                 type="submit"

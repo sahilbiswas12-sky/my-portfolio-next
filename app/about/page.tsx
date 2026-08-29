@@ -96,7 +96,7 @@ export default function AboutPage() {
 
             </h2>
 
-            <p className="mt-6 max-w-2xl leading-7 text-white/45">
+            <p className="mt-6 max-w-2xl leading-7 text-white/70">
               Experience across technology, AI, web development,
               business development, customer-focused operations,
               and professional environments.
@@ -549,7 +549,7 @@ function ExperienceCard({
               </div>
 
 
-              <p className="mt-2 text-sm text-white/45">
+              <p className="mt-2 text-sm text-white/70">
 
                 <span className={`font-medium ${style.company}`}>
                   {company}
@@ -566,7 +566,7 @@ function ExperienceCard({
             </div>
 
 
-            <p className="shrink-0 text-sm text-white/35">
+            <p className="shrink-0 text-sm text-white/60">
               {duration}
             </p>
 
@@ -575,7 +575,7 @@ function ExperienceCard({
 
           {/* LOCATION */}
 
-          <p className="mt-5 text-sm text-white/35">
+          <p className="mt-5 text-sm text-white/60">
             {location}
           </p>
 
@@ -586,7 +586,7 @@ function ExperienceCard({
 
             <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${style.dot}`} />
 
-            <p className="text-sm leading-7 text-white/45">
+            <p className="text-sm leading-7 text-white/70">
               {skills}
             </p>
 
@@ -669,7 +669,7 @@ function SkillCard({
       </h3>
 
 
-      <p className="mt-4 text-sm leading-7 text-white/45">
+      <p className="mt-4 text-sm leading-7 text-white/70">
         {skills}
       </p>
 

@@ -50,7 +50,7 @@ export default function Footer() {
               <div>
                 <p className="font-semibold">Sahil Biswas</p>
 
-                <p className="mt-1 text-xs text-white/40">
+                <p className="mt-1 text-xs text-white/60">
                   Web Developer · AI Engineer
                 </p>
               </div>
@@ -83,7 +83,7 @@ export default function Footer() {
           {/* Navigation and social links */}
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-[1.5fr_1fr] sm:gap-12">
             <nav aria-label="Footer navigation">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/0">
                 Navigation
               </p>
 
@@ -101,7 +101,7 @@ export default function Footer() {
             </nav>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/40">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60">
                 Connect
               </p>
 
@@ -138,12 +138,12 @@ export default function Footer() {
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
             </span>
 
-            <span className="text-xs uppercase tracking-[0.18em] text-white/40">
+            <span className="text-xs uppercase tracking-[0.18em] text-white/60">
               Available for opportunities
             </span>
           </div>
 
-          <p className="text-xs text-white/35">
+          <p className="text-xs text-white/60">
             © {currentYear} Sahil Biswas. Built with Next.js.
           </p>
         </div>

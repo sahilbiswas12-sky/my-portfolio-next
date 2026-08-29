@@ -142,7 +142,7 @@ export default function OfferLettersSection() {
                   </span>
                 </div>
 
-                <p className="mt-5 leading-7 text-white/45">
+                <p className="mt-5 leading-7 text-white/70">
                   {offer.summary}
                 </p>
 

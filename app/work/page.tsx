@@ -136,7 +136,7 @@ export default function WorkPage() {
 
                   {/* RIGHT */}
                   <div>
-                    <p className="max-w-2xl text-base leading-8 text-white/45 sm:text-lg">
+                    <p className="max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
                       {project.description}
                     </p>
 
@@ -153,11 +153,11 @@ export default function WorkPage() {
                     </div>
 
                     <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6">
-                      <span className="text-sm text-white/30">
+                      <span className="text-sm text-white/60">
                         View case study
                       </span>
 
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-lg text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10 group-hover:text-cyan-300">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-lg text-white/60 transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10 group-hover:text-cyan-300">
                         →
                       </span>
                     </div>
@@ -216,7 +216,7 @@ function Stat({
         {value}
       </p>
 
-      <p className="mt-1 text-xs uppercase tracking-[0.15em] text-white/30">
+      <p className="mt-1 text-xs uppercase tracking-[0.15em] text-white/60">
         {label}
       </p>
     </div>

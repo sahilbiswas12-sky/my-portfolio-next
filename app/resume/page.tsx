@@ -254,11 +254,11 @@ export default function ResumePage() {
                   {project.title}
                 </h3>
 
-                <p className="mt-4 leading-7 text-white/45">
+                <p className="mt-4 leading-7 text-white/70">
                   {project.description}
                 </p>
 
-                <p className="mt-6 text-sm leading-6 text-white/30">
+                <p className="mt-6 text-sm leading-6 text-white/60">
                   {project.stack}
                 </p>
 
@@ -285,7 +285,7 @@ export default function ResumePage() {
               Computer Science and Engineering
             </p>
 
-            <p className="mt-5 max-w-3xl leading-8 text-white/45">
+            <p className="mt-5 max-w-3xl leading-8 text-white/70">
               Developing a practical foundation in programming, web
               development, databases, software engineering and computer-science
               concepts.

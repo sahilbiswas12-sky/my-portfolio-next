@@ -262,7 +262,7 @@ export default function ProjectCaseStudy({
                 {stat.value}
               </p>
 
-              <p className="mt-2 text-sm text-white/35">
+              <p className="mt-2 text-sm text-white/60">
                 {stat.label}
               </p>
             </div>
@@ -428,7 +428,7 @@ export default function ProjectCaseStudy({
                   {technology.name}
                 </h3>
 
-                <p className="mt-2 text-sm leading-6 text-white/40">
+                <p className="mt-2 text-sm leading-6 text-white/60">
                   {technology.description}
                 </p>
               </div>
@@ -501,7 +501,7 @@ export default function ProjectCaseStudy({
             {previousUrl ? (
               <Link
                 href={previousUrl}
-                className="group flex items-center gap-3 text-sm text-white/35 transition hover:text-white"
+                className="group flex items-center gap-3 text-sm text-white/60 transition hover:text-white"
               >
                 <span className="transition group-hover:-translate-x-1">
                   ←
@@ -512,7 +512,7 @@ export default function ProjectCaseStudy({
             ) : (
               <Link
                 href="/work"
-                className="text-sm text-white/35 transition hover:text-white"
+                className="text-sm text-white/60 transition hover:text-white"
               >
                 ← Back to Selected Work
               </Link>
@@ -521,7 +521,7 @@ export default function ProjectCaseStudy({
             {nextUrl && (
               <Link
                 href={nextUrl}
-                className={`group flex items-center gap-3 text-sm text-white/35 transition ${theme.text}`}
+                className={`group flex items-center gap-3 text-sm text-white/60 transition ${theme.text}`}
               >
                 {nextLabel}
 
@@ -636,7 +636,7 @@ function PropertyVisual() {
             {price}
           </p>
 
-          <p className="mt-1 text-xs text-white/30">
+          <p className="mt-1 text-xs text-white/60">
             / month
           </p>
         </div>
@@ -730,7 +730,7 @@ function FeatureCard({
         {title}
       </h3>
 
-      <p className="mt-3 text-sm leading-7 text-white/45">
+      <p className="mt-3 text-sm leading-7 text-white/70">
         {description}
       </p>
     </div>
@@ -759,7 +759,7 @@ function ProcessCard({
           {title}
         </h3>
 
-        <p className="mt-2 leading-7 text-white/45">
+        <p className="mt-2 leading-7 text-white/70">
           {description}
         </p>
       </div>

@@ -131,7 +131,7 @@ export default function HomePage() {
                 Available for opportunities
               </span>
 
-              <span className="rounded-full border border-white/10 bg-white/2.5 px-4 py-2 text-xs text-white/40">
+              <span className="rounded-full border border-white/10 bg-white/2.5 px-4 py-2 text-xs text-white/60">
                 India
               </span>
             </div>
@@ -303,7 +303,7 @@ export default function HomePage() {
 
             <Link
               href="/work"
-              className="group text-sm text-white/40 transition hover:text-cyan-300"
+              className="group text-sm text-white/60 transition hover:text-cyan-300"
             >
               View all projects
               <span className="ml-2 inline-block transition group-hover:translate-x-1">
@@ -343,7 +343,7 @@ export default function HomePage() {
                       {project.title}
                     </h3>
 
-                    <p className="mt-5 max-w-xl leading-8 text-white/45">
+                    <p className="mt-5 max-w-xl leading-8 text-white/70">
                       {project.description}
                     </p>
 
@@ -351,7 +351,7 @@ export default function HomePage() {
                       {project.stack.map((technology) => (
                         <span
                           key={technology}
-                          className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs text-white/40 transition group-hover:border-cyan-400/20 group-hover:text-cyan-200"
+                          className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs text-white/60 transition group-hover:border-cyan-400/20 group-hover:text-cyan-200"
                         >
                           {technology}
                         </span>
@@ -360,11 +360,11 @@ export default function HomePage() {
 
                     <div className="mt-10 flex items-center justify-between border-t border-white/10 pt-6">
 
-                      <span className="text-sm text-white/30">
+                      <span className="text-sm text-white/60">
                         View case study
                       </span>
 
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/40 transition duration-300 group-hover:translate-x-1 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10 group-hover:text-cyan-300">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/60 transition duration-300 group-hover:translate-x-1 group-hover:border-cyan-400/30 group-hover:bg-cyan-400/10 group-hover:text-cyan-300">
                         →
                       </span>
 
@@ -407,7 +407,7 @@ export default function HomePage() {
                   {skill.items.map((item) => (
                     <span
                       key={item}
-                      className="rounded-lg border border-white/10 bg-white/2.5 px-3 py-2 text-xs text-white/45"
+                      className="rounded-lg border border-white/10 bg-white/2.5 px-3 py-2 text-xs text-white/70"
                     >
                       {item}
                     </span>
@@ -450,7 +450,7 @@ export default function HomePage() {
                       {step.title}
                     </h3>
 
-                    <p className="mt-2 max-w-xl leading-7 text-white/45">
+                    <p className="mt-2 max-w-xl leading-7 text-white/70">
                       {step.description}
                     </p>
                   </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
                   FlyRank AI
                 </h2>
 
-                <p className="mt-3 text-white/35">
+                <p className="mt-3 text-white/60">
                   Practical learning · Project-driven development
                 </p>
               </div>
@@ -528,7 +528,7 @@ export default function HomePage() {
                 Better full-stack experiences.
               </h2>
 
-              <p className="mt-5 leading-8 text-white/45">
+              <p className="mt-5 leading-8 text-white/70">
                 Continuing to build practical applications while improving
                 architecture, accessibility, user experience, and production
                 deployment.
@@ -545,7 +545,7 @@ export default function HomePage() {
                 Deeper AI + engineering workflows.
               </h2>
 
-              <p className="mt-5 leading-8 text-white/45">
+              <p className="mt-5 leading-8 text-white/70">
                 Exploring stronger React patterns, accessibility, full-stack
                 architecture, AI integration, prompt engineering, and better
                 ways to review AI-generated code.
@@ -694,7 +694,7 @@ function StatBox({
         {value}
       </p>
 
-      <p className="mt-2 text-xs uppercase tracking-[0.18em] text-white/30">
+      <p className="mt-2 text-xs uppercase tracking-[0.18em] text-white/60">
         {label}
       </p>
 
@@ -722,7 +722,7 @@ function CapabilityCard({
         {title}
       </h3>
 
-      <p className="mt-3 leading-7 text-white/45">
+      <p className="mt-3 leading-7 text-white/70">
         {description}
       </p>
     </div>
@@ -735,7 +735,7 @@ function MiniPoint({
   text: string;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/2 px-4 py-3 text-sm text-white/45">
+    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/2 px-4 py-3 text-sm text-white/70">
       <span className="text-cyan-300">✓</span>
       {text}
     </div>
@@ -762,7 +762,7 @@ function ReasonCard({
         {title}
       </h3>
 
-      <p className="mt-3 leading-7 text-white/40">
+      <p className="mt-3 leading-7 text-white/60">
         {description}
       </p>
 

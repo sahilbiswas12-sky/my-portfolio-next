@@ -82,7 +82,7 @@ export default function BlogPage() {
                 </h2>
               </div>
 
-              <span className="rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm text-white/45">
+              <span className="rounded-full border border-white/10 bg-black/20 px-5 py-3 text-sm text-white/70">
                 0 published posts
               </span>
             </div>
@@ -118,7 +118,7 @@ export default function BlogPage() {
 
                 <h2 className="mt-4 text-2xl font-semibold">{topic.title}</h2>
 
-                <p className="mt-5 leading-7 text-white/45">
+                <p className="mt-5 leading-7 text-white/70">
                   {topic.description}
                 </p>
               </article>

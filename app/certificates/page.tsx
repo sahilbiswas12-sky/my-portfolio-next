@@ -166,7 +166,7 @@ export default function CertificatesPage() {
                     </span>
                   </div>
 
-                  <p className="mt-5 leading-7 text-white/45">
+                  <p className="mt-5 leading-7 text-white/70">
                     {certificate.description}
                   </p>
 

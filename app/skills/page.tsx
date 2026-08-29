@@ -171,7 +171,7 @@ export default function SkillsPage() {
                   {group.title}
                 </h2>
 
-                <p className="mt-4 leading-7 text-white/45">
+                <p className="mt-4 leading-7 text-white/70">
                   {group.description}
                 </p>
 
