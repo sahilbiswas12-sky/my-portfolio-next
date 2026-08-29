@@ -158,7 +158,7 @@ export default function SkillsPage() {
                 className="group rounded-[2rem] border border-white/10 bg-white/2.5 p-8 transition duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-2xl hover:shadow-cyan-500/5 sm:p-9"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/25">
+                  <span className="text-sm text-white/60">
                     {group.number}
                   </span>
 

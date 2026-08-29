@@ -326,7 +326,7 @@ export default function HomePage() {
                   <div className="relative">
 
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-white/25">
+                      <span className="text-sm text-white/60">
                         {project.number}
                       </span>
 

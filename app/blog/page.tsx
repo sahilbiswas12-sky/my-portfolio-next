@@ -106,7 +106,7 @@ export default function BlogPage() {
                 className="rounded-[2rem] border border-white/10 bg-white/2.5 p-8 transition duration-500 hover:-translate-y-2 hover:border-cyan-400/30"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-white/25">{topic.number}</span>
+                  <span className="text-sm text-white/60">{topic.number}</span>
                   <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs text-cyan-300">
                     Planned
                   </span>

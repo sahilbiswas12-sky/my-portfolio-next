@@ -171,7 +171,7 @@ export default function CertificatesPage() {
                   </p>
 
                   <div className="mt-6 border-t border-white/10 pt-5">
-                    <p className="text-xs uppercase tracking-[0.18em] text-white/25">
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/60">
                       Issued
                     </p>
                     <p className="mt-2 text-sm text-white/65">

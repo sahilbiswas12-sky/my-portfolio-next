@@ -112,7 +112,7 @@ export default function WorkPage() {
                   {/* LEFT */}
                   <div>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-white/25">
+                      <span className="text-sm text-white/60">
                         {project.number}
                       </span>
 

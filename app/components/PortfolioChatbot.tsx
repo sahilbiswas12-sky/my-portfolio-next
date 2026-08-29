@@ -223,7 +223,7 @@ export default function PortfolioChatbot() {
                 →
               </button>
             </div>
-            <p className="mt-2 text-center text-[10px] text-white/25">
+            <p className="mt-2 text-center text-[10px] text-white/60">
               AI responses may be inaccurate. Verify important information.
             </p>
           </form>

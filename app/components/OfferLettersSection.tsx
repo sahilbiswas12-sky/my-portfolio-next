@@ -172,7 +172,7 @@ export default function OfferLettersSection() {
 function Detail({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-xl border border-white/10 bg-black/20 p-4">
-      <dt className="text-xs uppercase tracking-[0.18em] text-white/25">
+      <dt className="text-xs uppercase tracking-[0.18em] text-white/60">
         {label}
       </dt>
       <dd className="mt-2 text-sm leading-6 text-white/65">{value}</dd>
