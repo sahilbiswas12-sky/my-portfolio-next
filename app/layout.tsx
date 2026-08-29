@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ||
-      "http://localhost:3000",
+      "https://my-portfolio-next-blue.vercel.app",
   ),
 
   openGraph: {
@@ -64,6 +64,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Sahil Biswas Portfolio",
+    url: "https://my-portfolio-next-blue.vercel.app",
   },
 
   twitter: {
@@ -91,17 +92,16 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={cn(
-        "font-sans",
-        geist.variable,
-      )}
+      className={cn("font-sans", geist.variable)}
     >
       <body className="bg-[#050505] text-white antialiased">
         <ScrollProgress />
 
         <Navbar />
 
-        {children}
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
 
         <Footer />
 
