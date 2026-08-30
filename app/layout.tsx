@@ -17,7 +17,13 @@ const geist = Geist({
   variable: "--font-geist-sans",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://my-portfolio-next-blue.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: {
     default:
       "Sahil Biswas — Web Developer, AI Engineer & Business Professional",
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Sahil Biswas is a Web Developer, AI Engineer & Business Professional building modern websites, AI-powered applications, and practical digital solutions.",
+    "Sahil Biswas is a Web Developer, AI Engineer and Business Professional building modern websites, AI-powered applications and practical digital solutions.",
 
   keywords: [
     "Sahil Biswas",
@@ -44,42 +50,55 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Sahil Biswas",
+      url: siteUrl,
     },
   ],
 
   creator: "Sahil Biswas",
+  publisher: "Sahil Biswas",
 
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://my-portfolio-next-blue.vercel.app",
-  ),
+  alternates: {
+    canonical: "/",
+  },
 
   openGraph: {
     title:
       "Sahil Biswas — Web Developer, AI Engineer & Business Professional",
-
     description:
-      "Portfolio of Sahil Biswas — Web Developer, AI Engineer & Business Professional creating modern digital experiences and practical technology solutions.",
-
-    type: "website",
-    locale: "en_IN",
+      "Portfolio of Sahil Biswas — a Web Developer, AI Engineer and Business Professional creating modern digital experiences and practical technology solutions.",
+    url: siteUrl,
     siteName: "Sahil Biswas Portfolio",
-    url: "https://my-portfolio-next-blue.vercel.app",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Sahil Biswas — Web Developer, AI Engineer & Business Professional",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
-
     title:
       "Sahil Biswas — Web Developer, AI Engineer & Business Professional",
-
     description:
-      "Portfolio of Sahil Biswas — Web Developer, AI Engineer & Business Professional.",
+      "Portfolio of Sahil Biswas — Web Developer, AI Engineer and Business Professional.",
+    images: ["/opengraph-image"],
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
